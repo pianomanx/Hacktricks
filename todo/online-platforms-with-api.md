@@ -126,12 +126,6 @@ Obtain interesting info from IPs
 
 Search by domain and email and get if it was pwned and passwords. Commercial?
 
-### [IP2Location.io](https://www.ip2location.io/)
-
-It detects IP geolocation, data center, ASN and even VPN information. It offers free 30K queries per month.
-
-
-
 [https://dnsdumpster.com/](https://dnsdumpster.com/)(in a commercial tool?)
 
 [https://www.netcraft.com/](https://www.netcraft.com/) (in a commercial tool?)

